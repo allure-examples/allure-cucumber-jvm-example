@@ -1,11 +1,28 @@
+[maven]: http://maven.apache.org/
+[git]: http://git-scm.com/
+
 ## Allure Cucumber-JVM Example
 
-To run tests you need to install [maven](http://maven.apache.org/) and [git](http://git-scm.com/).
+### Getting Started
+
+To run tests you need to install [maven][maven] and [git][git].
 
 To generate Allure Report you should perform following steps:
+
 ```bash
 $ git clone git@github.com:allure-examples/allure-cucumber-jvm-example.git
 $ mvn clean test
 $ mvn site
 ```
-**Please note:** Report could not be opened by file:// url (AngularJS limitation). To correctly open the report, **site/** directory must be acessible under http(s):// context. Or just use [allure-cli](https://github.com/allure-framework/allure-cli) tool instead for report generation and opening.
+
+To see a report, run `mvn jetty:run` and open `http://localhost:8080` in your browser
+
+**NOTE: required maven version 3.1.1 or above**
+
+### More
+
+* [Documentation](https://github.com/allure-framework/allure-core/wiki)
+* [Issue Tracking](https://github.com/allure-framework/allure-core/issues?labels=&milestone=&page=1&state=open)
+* Mailing list: [allure@yandex-team.ru](mailto:allure@yandex-team.ru)
+* Gitter chat room: [https://gitter.im/allure-framework/allure-core](https://gitter.im/allure-framework/allure-core)
+* StackOverflow tag: [Allure](http://stackoverflow.com/questions/tagged/allure)
