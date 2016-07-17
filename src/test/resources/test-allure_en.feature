@@ -1,6 +1,7 @@
+@en
 Feature: Test allure English
 
-  @en
+  
   Scenario: Test multiply
     Given first digit 5
     And second digit 5
