@@ -1,5 +1,9 @@
 package com.mycompany.testing;
 
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import cucumber.api.java.ru.*;
 import java.util.Arrays;
 import org.junit.Assert;
@@ -16,32 +20,36 @@ public class Steps {
     int sum;
 
     @Дано("^первое число (\\d+)$")
-    public void первое_число(int digit) throws Throwable {
+    @Given("^first digit (\\d+)$")
+    public void firstDigit(int digit) throws Throwable {
         a = digit;
     }
 
     @Дано("^второе число (\\d+)$")
-    public void второе_число(int digit) throws Throwable {
+    @And("^second digit (\\d+)$")
+    public void secondDigit(int digit) throws Throwable {
         b = digit;
     }
 
     @Дано("^третье число (\\d+)$")
-    public void третье_число(int digit) throws Throwable {
+    public void thirdDigit(int digit) throws Throwable {
         c = digit;
     }
 
     @Когда("^я их складываю$")
-    public void я_их_складываю() throws Throwable {
+    @When("^I multiply it$")
+    public void multiply() throws Throwable {
         sum = a + b + c;
     }
 
     @Тогда("^сумма равна (\\d+)$")
-    public void сумма_равна(int result) throws Throwable {
+    @Then("^sum is (\\d+)$")
+    public void sum(int result) throws Throwable {
         Assert.assertEquals(result, sum);
     }
 
     @Дано("^сломанный сценарий$")
-    public void сломанный_сценарий() throws Throwable {
+    public void brokenScenario() throws Throwable {
         try {
             Object o = 1;
             String fail = (String) o;
@@ -52,12 +60,12 @@ public class Steps {
     }
 
     @Когда("^отображается отчет$")
-    public void отображается_отчет() throws Throwable {
+    public void seeTheReport() throws Throwable {
 
     }
 
     @То("^видно исключение$")
-    public void видно_исключение() throws Throwable {
+    public void seeAnException() throws Throwable {
 
     }
 
