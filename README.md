@@ -1,22 +1,15 @@
 [maven]: http://maven.apache.org/
 [git]: http://git-scm.com/
 
-## Allure Cucumber-JVM with JUnit Example
+## Allure Cucumber-JVM Examples
 
 ### Getting Started
 
 To run tests you need to install [maven][maven] and [git][git].
 
-To generate Allure Report you should perform following steps:
-
-```bash
-$ git clone git@github.com:allure-examples/allure-cucumber-jvm-example.git
-$ cd junit
-$ mvn clean test
-$ mvn site
-```
-
-To see a report, run `mvn jetty:run` in current folder and open `http://localhost:8080` in your browser
+To generate Allure Report you should perform following:
+* [For Junit](junit/)
+* [For TestNG](testng/)
 
 **NOTE: required maven version 3.1.1 or above**
 
