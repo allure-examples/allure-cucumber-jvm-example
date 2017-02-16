@@ -13,6 +13,44 @@ To generate Allure Report you should perform following:
 
 **NOTE: required maven version 3.1.1 or above**
 
+
+### OnFailureSchedulerCallback
+This feature let users to schedule events on test failure.
+That's how it works:
+* Create callback class which implements OnFailureCallback and add some logic into overriden ```call()``` method:
+```java
+public class FailureCallback implements OnFailureCallback {
+    @Override
+    public Object call() {
+        return 10;
+    }
+}
+```
+* To schedule callback action on test failure just put it into ```@Before``` section.
+* To get callback result ask it on ```@After``` stage.
+
+```java
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import cucumber.api.java.en.Given;
+
+public calss StepDefinitions {
+   @Before
+    public void before() {
+        AllureReporter.applyFailureCallback(FailureCallback.class);
+    }
+
+  @Given("some regex")
+  public void someFailedStep(){ /* Some code which leads to error */}
+
+    @After
+    public void after() {
+        int result = AllureReporter.getFailureCallbackResult();
+        Assert.assertEquals(10, result);
+    }
+}
+```
+
 ### More
 
 * [Documentation](https://github.com/allure-framework/allure-core/wiki)
