@@ -18,8 +18,6 @@ $ mvn site
 
 To see a report, run `mvn jetty:run` in current folder and open `http://localhost:8080` in your browser
 
-**NOTE: required maven version 3.1.1 or above**
-
 ### More
 
 * [Documentation](https://github.com/allure-framework/allure-core/wiki)
