@@ -35,13 +35,13 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 
 public calss StepDefinitions {
-   @Before
+    @Before
     public void before() {
         AllureReporter.applyFailureCallback(FailureCallback.class);
     }
 
-  @Given("some regex")
-  public void someFailedStep(){ /* Some code which leads to error */}
+    @Given("some regex")
+    public void someFailedStep(){ /* Some code which leads to error */}
 
     @After
     public void after() {
@@ -50,6 +50,7 @@ public calss StepDefinitions {
     }
 }
 ```
+So you can do everything you want in ```call()``` method: attach screenshots, rotate logs, etc. And you always can get callback result in ```@After``` section
 
 ### More
 
